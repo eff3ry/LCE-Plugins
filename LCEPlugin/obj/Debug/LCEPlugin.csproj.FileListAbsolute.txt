@@ -1,0 +1,11 @@
+C:\Users\Jeffery\source\repos\LCEPlugin\LCEPlugin\bin\Debug\LCEPlugin.dll
+C:\Users\Jeffery\source\repos\LCEPlugin\LCEPlugin\bin\Debug\LCEPlugin.pdb
+C:\Users\Jeffery\source\repos\LCEPlugin\LCEPlugin\bin\Debug\Minecraft.Server.FourKit.dll
+C:\Users\Jeffery\source\repos\LCEPlugin\LCEPlugin\bin\Debug\Minecraft.Server.FourKit.pdb
+C:\Users\Jeffery\source\repos\LCEPlugin\LCEPlugin\obj\Debug\LCEPlugin.csproj.AssemblyReference.cache
+C:\Users\Jeffery\source\repos\LCEPlugin\LCEPlugin\obj\Debug\LCEPlugin.csproj.CoreCompileInputs.cache
+C:\Users\Jeffery\source\repos\LCEPlugin\LCEPlugin\obj\Debug\LCEPlugin.csproj.Up2Date
+C:\Users\Jeffery\source\repos\LCEPlugin\LCEPlugin\obj\Debug\LCEPlugin.dll
+C:\Users\Jeffery\source\repos\LCEPlugin\LCEPlugin\obj\Debug\LCEPlugin.pdb
+C:\Users\Jeffery\source\repos\LCEPlugin\LCEPlugin\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\Jeffery\source\repos\LCEPlugin\LCEPlugin\bin\Debug\Microsoft.Bcl.HashCode.xml
