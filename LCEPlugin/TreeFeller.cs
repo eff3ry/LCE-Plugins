@@ -1,4 +1,10 @@
-﻿using System;
+﻿using Minecraft.Server.FourKit;
+using Minecraft.Server.FourKit.Block;
+using Minecraft.Server.FourKit.Entity;
+using Minecraft.Server.FourKit.Event;
+using Minecraft.Server.FourKit.Event.Block;
+using Minecraft.Server.FourKit.Plugin;
+using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using static LCEPlugin.Util;
@@ -86,10 +92,10 @@ namespace LCEPlugin
                 return;
             }
 
-            if (!player.isSneaking())
-            {
-                return;
-            }
+            //if (!player.isSneaking())
+            //{
+            //    return;
+            //}
 
             int logsBroken = FellTree(block, player);
 
@@ -127,7 +133,7 @@ namespace LCEPlugin
                 Coordinate current = toCheck.Dequeue();
 
                 Block currentBlock = GetBlockAt(player, current);
-                if (currentBlock == null || currentBlock.getType() != initialBlock.getType() || currentBlock.getData(0) != initialBlock.getData(0)) //Issue block type and orientation are within the same value
+                if (currentBlock == null || currentBlock.getType() != initialBlock.getType() || currentBlock.getData() != initialBlock.getData()) //Issue block type and orientation are within the same value
                 {
                     continue;
                 }
@@ -207,7 +213,7 @@ namespace LCEPlugin
         {
             try
             {
-                Block block = FourKit.getBlockAt(coord.X, coord.Y, coord.Z);
+                Block block = player.getWorld().getBlockAt(coord.X, coord.Y, coord.Z);
                 return block;
             }
             catch

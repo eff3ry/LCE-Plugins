@@ -1,4 +1,10 @@
-﻿using System;
+﻿using Minecraft.Server.FourKit;
+using Minecraft.Server.FourKit.Block;
+using Minecraft.Server.FourKit.Entity;
+using Minecraft.Server.FourKit.Event;
+using Minecraft.Server.FourKit.Event.Block;
+using Minecraft.Server.FourKit.Plugin;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using static LCEPlugin.Util;
@@ -88,12 +94,12 @@ namespace LCEPlugin
                 return;
             }
 
-            if (!player.isSneaking())
-            {
-                return;
-            }
+            //if (!player.isSneaking())
+            //{
+            //    return;
+            //}
 
-            int oresBroken = VeinMine(block, player, block.getType());
+            int oresBroken = VeinMine(block, player, block.getTypeId());
 
             if (oresBroken > 1)
             {
@@ -134,14 +140,14 @@ namespace LCEPlugin
                 Block currentBlock = GetBlockAt(player, current);
                 if (blockType == 73 || blockType == 74) // Special case for redstone to break both lit and unlit
                 {
-                    if (currentBlock == null || (currentBlock.getType() != 73 && currentBlock.getType() != 74))
+                    if (currentBlock == null || (currentBlock.getTypeId() != 73 && currentBlock.getTypeId() != 74))
                     {
                         continue;
                     }
                 }
                 else
                 {
-                    if (currentBlock == null || currentBlock.getType() != blockType)
+                    if (currentBlock == null || currentBlock.getTypeId() != blockType)
                     {
                         continue;
                     }
@@ -222,7 +228,7 @@ namespace LCEPlugin
         {
             try
             {
-                Block block = FourKit.getBlockAt(coord.X, coord.Y, coord.Z);
+                Block block = player.getWorld().getBlockAt(coord.X, coord.Y, coord.Z);
                 return block;
             }
             catch

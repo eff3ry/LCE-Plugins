@@ -35,8 +35,9 @@
     <Reference Include="Microsoft.Bcl.HashCode, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.HashCode.6.0.0\lib\net462\Microsoft.Bcl.HashCode.dll</HintPath>
     </Reference>
-    <Reference Include="Minecraft.Server.FourKit">
-      <HintPath>..\..\..\..\Documents\GitHub\MCLCE\x64\Minecraft.Server\Debug\Minecraft.Server.FourKit.dll</HintPath>
+    <Reference Include="Minecraft.Server.FourKit, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MinecraftConsoles\build\windows64\Minecraft.Server.FourKit\bin\Debug\Minecraft.Server.FourKit.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,9 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandExamplePlugin.cs" />
+    <Compile Include="InvSee.cs" />
     <Compile Include="MapGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProtectIt\listener\SignChange.cs" />
+    <Compile Include="ProtectIt\ProtectIt.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="Veinminer.cs" />
     <Compile Include="TreeFeller.cs" />

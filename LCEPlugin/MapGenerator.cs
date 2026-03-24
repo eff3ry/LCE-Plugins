@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Minecraft.Server.FourKit;
+using Minecraft.Server.FourKit.Command;
+using Minecraft.Server.FourKit.Entity;
+using Minecraft.Server.FourKit.Plugin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -54,7 +58,7 @@ namespace LCEPlugin
 
     public class startCommand : CommandExecutor
     {
-        public bool onCommand(CommandSender sender, global::Command command, string label, string[] args)
+        public bool onCommand(CommandSender sender, Minecraft.Server.FourKit.Command.Command command, string label, string[] args)
         {
             if (!(sender is Player))
             {
@@ -98,7 +102,7 @@ namespace LCEPlugin
 
     public class stopCommand : CommandExecutor
     {
-        public bool onCommand(CommandSender sender, global::Command command, string label, string[] args)
+        public bool onCommand(CommandSender sender, Minecraft.Server.FourKit.Command.Command command, string label, string[] args)
         {
             if (!(sender is Player))
             {
@@ -195,9 +199,10 @@ namespace LCEPlugin
 
             try
             {
-                this.originalX = player.getX();
-                this.originalY = player.getY();
-                this.originalZ = player.getZ();
+                Location loc = player.getLocation();
+                this.originalX = loc.getX();
+                this.originalY = loc.getY();
+                this.originalZ = loc.getZ();
                 this.hasOriginalLocation = true;
             }
             catch
@@ -319,7 +324,8 @@ namespace LCEPlugin
 
                             try
                             {
-                                player.teleport(x, yLevel, z);
+                                Location newloc = new Location(x, yLevel, z); // Validate coordinates before teleporting
+                                player.teleport(newloc);
 
                                 completedSteps++;
 
@@ -371,7 +377,8 @@ namespace LCEPlugin
             {
                 try
                 {
-                    player.teleport(originalX, originalY, originalZ);
+                    Location location = new Location(originalX, originalY, originalZ);
+                    player.teleport(location);
                     player.sendMessage("Returned to original location.");
                 }
                 catch
