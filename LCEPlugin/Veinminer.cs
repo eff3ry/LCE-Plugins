@@ -21,17 +21,17 @@ namespace LCEPlugin
         /// <summary>
         /// Gets the name of the plugin.
         /// </summary>
-        public string GetName() => "VeinMiner";
+        public override string name => "VeinMiner";
 
         /// <summary>
         /// Gets the current version of the plugin.
         /// </summary>
-        public string GetVersion() => "1.0.0";
+        public override string version => "1.0.0";
 
         /// <summary>
         /// Gets the author of the plugin.
         /// </summary>
-        public string GetAuthor() => "effery";
+        public override string author => "effery";
 
         #endregion
 
