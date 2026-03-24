@@ -1,0 +1,41 @@
+# Visual Studio workspace files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build output
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+AnyCPU/
+
+# Test and coverage output
+TestResults/
+*.coverage
+*.coveragexml
+
+# NuGet packages (packages.config workflow)
+packages/*
+!packages/build/
+!packages/repositories.config
+*.nupkg
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Symbols and generated caches
+*.pdb
+*.cache
+*.Up2Date
+
+# OS cruft
+.DS_Store
+Thumbs.db
+ehthumbs.db
+._*
